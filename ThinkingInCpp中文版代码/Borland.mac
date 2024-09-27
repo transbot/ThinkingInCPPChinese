@@ -1,0 +1,10 @@
+CPP = bcc32
+CPPFLAGS = -w-inl
+OFLAGS = -c
+EXEFLAG = -e
+OBJEXT = obj
+LIBLINK = -l
+.cpp.$(OBJEXT) :
+	$(CPP) $(CPPFLAGS) $(OFLAGS) $< -o $@
+.$(OBJEXT).exe :
+	$(CPP) $(CPPFLAGS) $< $(EXEFLAG)$@

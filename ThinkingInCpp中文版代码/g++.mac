@@ -1,0 +1,10 @@
+CPP = g++
+CPPFLAGS = -Wall
+OFLAGS = -c
+EXEFLAG = -o  
+OBJEXT = o
+LIBLINK = -l
+.cpp.$(OBJEXT) :
+	$(CPP) $(CPPFLAGS) $(OFLAGS) $< -o $@
+.$(OBJEXT).exe :
+	$(CPP) $(CPPFLAGS) $< $(EXEFLAG)$@

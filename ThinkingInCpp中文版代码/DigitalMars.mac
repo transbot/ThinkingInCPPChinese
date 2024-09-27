@@ -1,0 +1,10 @@
+CPP = dmc
+CPPFLAGS = -Ae -Ar -I..\ZThread\include -DZT_WIN32=1 -w18
+OFLAGS = -c
+EXEFLAG = -o
+OBJEXT = obj
+LIBLINK = ..\ZThread\lib\\
+.cpp.$(OBJEXT) :
+	$(CPP) $(CPPFLAGS) $(OFLAGS) $< -o $@
+.$(OBJEXT).exe :
+	$(CPP) $(CPPFLAGS) $< $(EXEFLAG)$@

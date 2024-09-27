@@ -1,0 +1,10 @@
+CPP = /cygdrive/c/sxl/linkx.bat
+CPPFLAGS = 
+OFLAGS = -c 
+EXEFLAG = -o 
+OBJEXT = obj
+LIBLINK = -l
+.cpp.$(OBJEXT) :
+	$(CPP) $(CPPFLAGS) $(OFLAGS) $< -o $@
+.$(OBJEXT).exe :
+	$(CPP) $(CPPFLAGS) $< $(EXEFLAG)$@

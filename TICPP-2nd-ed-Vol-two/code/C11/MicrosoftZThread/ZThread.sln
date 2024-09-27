@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZTHREAD_STATIC", "ZTHREAD_STATIC.vcproj", "{9EA56CBC-26B1-4087-9A99-16EACCEA89AE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZTHREAD_SHARED", "ZTHREAD_SHARED.vcproj", "{8589A169-FEF7-4F16-A0FA-11AFF378C05E}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{98AF35DC-A4CD-414F-947A-C3C90B775277}.0 = {9EA56CBC-26B1-4087-9A99-16EACCEA89AE}
+		{D7FBA1EF-F0F7-4FAE-A493-8FCC62EEC653}.0 = {9EA56CBC-26B1-4087-9A99-16EACCEA89AE}
+		{AD29EE97-3085-40C4-B7D8-6033B7947B09}.0 = {9EA56CBC-26B1-4087-9A99-16EACCEA89AE}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{9EA56CBC-26B1-4087-9A99-16EACCEA89AE}.Debug.ActiveCfg = Debug|Win32
+		{9EA56CBC-26B1-4087-9A99-16EACCEA89AE}.Debug.Build.0 = Debug|Win32
+		{9EA56CBC-26B1-4087-9A99-16EACCEA89AE}.Release.ActiveCfg = Release|Win32
+		{9EA56CBC-26B1-4087-9A99-16EACCEA89AE}.Release.Build.0 = Release|Win32
+		{98AF35DC-A4CD-414F-947A-C3C90B775277}.Debug.ActiveCfg = Debug|Win32
+		{98AF35DC-A4CD-414F-947A-C3C90B775277}.Debug.Build.0 = Debug|Win32
+		{98AF35DC-A4CD-414F-947A-C3C90B775277}.Release.ActiveCfg = Release|Win32
+		{98AF35DC-A4CD-414F-947A-C3C90B775277}.Release.Build.0 = Release|Win32
+		{8589A169-FEF7-4F16-A0FA-11AFF378C05E}.Debug.ActiveCfg = Debug|Win32
+		{8589A169-FEF7-4F16-A0FA-11AFF378C05E}.Debug.Build.0 = Debug|Win32
+		{8589A169-FEF7-4F16-A0FA-11AFF378C05E}.Release.ActiveCfg = Release|Win32
+		{8589A169-FEF7-4F16-A0FA-11AFF378C05E}.Release.Build.0 = Release|Win32
+		{D7FBA1EF-F0F7-4FAE-A493-8FCC62EEC653}.Debug.ActiveCfg = Debug|Win32
+		{D7FBA1EF-F0F7-4FAE-A493-8FCC62EEC653}.Debug.Build.0 = Debug|Win32
+		{D7FBA1EF-F0F7-4FAE-A493-8FCC62EEC653}.Release.ActiveCfg = Release|Win32
+		{D7FBA1EF-F0F7-4FAE-A493-8FCC62EEC653}.Release.Build.0 = Release|Win32
+		{AD29EE97-3085-40C4-B7D8-6033B7947B09}.Debug.ActiveCfg = Debug|Win32
+		{AD29EE97-3085-40C4-B7D8-6033B7947B09}.Debug.Build.0 = Debug|Win32
+		{AD29EE97-3085-40C4-B7D8-6033B7947B09}.Release.ActiveCfg = Release|Win32
+		{AD29EE97-3085-40C4-B7D8-6033B7947B09}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

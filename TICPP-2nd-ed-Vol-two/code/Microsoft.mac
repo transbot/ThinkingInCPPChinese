@@ -1,0 +1,10 @@
+CPP = cl
+CPPFLAGS = /GX -Za /I../ZThread/include /GR""
+OFLAGS = -c
+EXEFLAG = -Fe
+OBJEXT = obj
+LIBLINK = -l
+.cpp.$(OBJEXT) :
+	$(CPP) $(CPPFLAGS) $(OFLAGS) $< -o $@
+.$(OBJEXT).exe :
+	$(CPP) $(CPPFLAGS) $< $(EXEFLAG)$@
