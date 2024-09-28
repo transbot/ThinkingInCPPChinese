@@ -15,17 +15,17 @@ using std::string;
 
 class StringStorageTest : public TestSuite::Test {
 public:
-  void run() {
-    string s1("12345");
-    // 要么将第一个拷贝给第二个，
-    // 要么使用引用计数来模拟一次拷贝动作：
-    string s2 = s1;
-    test_(s1 == s2);
-    // 无论如何，该语句都只能修改s1：
-    s1[0] = '6';
-    cout << "s1 = " << s1 << endl;  // 62345
-    cout << "s2 = " << s2 << endl;  // 12345
-    test_(s1 != s2);
-  }
+    void run() {
+        string s1("12345");
+        // 取决于具体的实现，以下代码既可能会将第一个字符串拷贝到第二个字符串，
+        // 也可能会使用引用计数来模拟拷贝动作。
+        string s2 = s1;
+        test_(s1 == s2);
+        // 无论哪种方式，以下语句都只会修改s1：
+        s1[0] = '6';
+        cout << "s1 = " << s1 << endl; // 62345
+        cout << "s2 = " << s2 << endl; // 12345
+        test_(s1 != s2);
+    }
 };
 #endif // STRINGSTORAGE_H ///:~

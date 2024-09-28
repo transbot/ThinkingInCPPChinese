@@ -1,8 +1,10 @@
 //: C03:StringStorage.cpp
-// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// See source code use permissions stated in the file 'License.txt',
-// distributed with the code package available at www.MindView.net.
+// ���ԡ�C++���˼��, ��2�桷
+// ���ߣ�Bruce Eckel & Chuck Allison��
+// ���ߣ��ܾ�(bookzhou.com)
+// �й�Դ�����ʹ�����ɣ�����Ĵ����������License.txt�ļ���
+// �ô�����ɴ�www.MindView.net�����İ�������ҳbookzhou.com���ء�
 //{L} ../TestSuite/Test
 #include "StringStorage.h"
 
