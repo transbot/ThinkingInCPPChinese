@@ -30,7 +30,7 @@ public:
 }; 
 
 int main() {
-    // 空的 main 函数入口点，不执行任何操作
+    // 空的main函数入口点，不执行任何操作
     return 0;
 }
 

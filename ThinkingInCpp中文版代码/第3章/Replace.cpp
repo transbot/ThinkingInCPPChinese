@@ -1,31 +1,36 @@
 //: C03:Replace.cpp
-// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
-// (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// See source code use permissions stated in the file 'License.txt',
-// distributed with the code package available at www.MindView.net.
+// 来自《C++编程思想, 第2卷》
+// 作者：Bruce Eckel & Chuck Allison。
+// 译者：周靖(bookzhou.com)
+// 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
+// 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
 #include <cassert>
-#include <cstddef>  // For size_t
+#include <cstddef> // 为了使用size_t
 #include <string>
 using namespace std;
 
 void replaceChars(string& modifyMe,
-  const string& findMe, const string& newChars) {
-  // Look in modifyMe for the "find string"
-  // starting at position 0:
-  size_t i = modifyMe.find(findMe, 0);
-  // Did we find the string to replace?
-  if(i != string::npos)
-    // Replace the find string with newChars:
-    modifyMe.replace(i, findMe.size(), newChars);
+    const string& findMe, const string& newChars) {
+
+    // 从位置0开始，在modifyMe中查找要替换的字符串findMe
+    size_t i = modifyMe.find(findMe, 0);
+    
+    // 是否找到了要替换的字符串？
+    if(i != string::npos)
+        // 使用newChars替换findMe
+        modifyMe.replace(i, findMe.size(), newChars);
 }
 
 int main() {
-  string bigNews = "I thought I saw Elvis in a UFO. "
-                   "I have been working too hard.";
-  string replacement("wig");
-  string findMe("UFO");
-  // Find "UFO" in bigNews and overwrite it:
-  replaceChars(bigNews, findMe, replacement);
-  assert(bigNews == "I thought I saw Elvis in a "
-         "wig. I have been working too hard.");
+    string mirrorListening = "一更鼓儿天，"
+                             "这一去金川十呀么十七年。";
+    string replacement("十八"); // 这是替换字符串
+    string findMe("十七");      // 这是要被替换的字符串
+    
+    // 在mirrorListening中查找"十七"并用"十八"覆盖它
+    replaceChars(mirrorListening, findMe, replacement);
+
+    // 验证替换成功
+    assert(mirrorListening == "一更鼓儿天，"
+                              "这一去金川十呀么十八年。");                     
 } ///:~
