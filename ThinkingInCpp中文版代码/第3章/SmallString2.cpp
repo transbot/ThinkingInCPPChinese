@@ -1,9 +1,8 @@
 //: C03:SmallString2.cpp
-// æ¥è‡ªã€ŠC++ç¼–ç¨‹æ€æƒ³, ç¬¬2å·ã€‹
-// ä½œè€…ï¼šBruce Eckel & Chuck Allisonã€‚
-// è¯‘è€…ï¼šå‘¨é–(bookzhou.com)
-// æœ‰å…³æºä»£ç çš„ä½¿ç”¨è®¸å¯ï¼Œè¯·å‚é˜…ä»£ç åŒ…é™„å¸¦çš„License.txtæ–‡ä»¶ï¼Œ
-// è¯¥ä»£ç åŒ…å¯ä»www.MindView.netæˆ–ä¸­æ–‡ç‰ˆè¯‘è€…ä¸»é¡µbookzhou.comä¸‹è½½ã€‚
+// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
+// (c) 1995-2004 MindView, Inc. All Rights Reserved.
+// See source code use permissions stated in the file 'License.txt',
+// distributed with the code package available at www.MindView.net.
 
 
 #include <string>
@@ -16,27 +15,26 @@ int main() {
     string s2("Anything worth doing is worth overdoing.");
     string s3("I saw Elvis in a UFO");
 
-    // æ‹·è´å‰8ä¸ªå­—ç¬¦
+    // ¿½±´Ç°8¸ö×Ö·û
     string s4(s1, 0, 8);
-    cout << s4 << endl;  // è¾“å‡ºï¼š 
+    cout << s4 << endl;  // Êä³ö£ºWhat is 
 
-    // æ‹·è´æºå­—ç¬¦ä¸²ä¸­é—´ä½ç½®çš„6ä¸ªå­—ç¬¦
+    // ¿½±´Ô´×Ö·û´®ÖĞ¼äÎ»ÖÃµÄ6¸ö×Ö·û
     string s5(s2, 15, 6);
-    cout << s5 << endl;  // è¾“å‡ºï¼šdoing
+    cout << s5 << endl;  // Êä³ö£ºdoing
 
-    // ä»ä¸­é—´ä½ç½®æ‹·è´åˆ°ç»“å°¾
+    // ´ÓÖĞ¼äÎ»ÖÃ¿½±´µ½½áÎ²
     string s6(s3, 6, 15);
-    cout << s6 << endl;  // è¾“å‡ºï¼šElvis in a UFO
+    cout << s6 << endl;  // Êä³ö£ºElvis in a UFO
 
-    // åˆå¹¶å¤šä¸ªå­—ç¬¦ä¸²
+    // ºÏ²¢¶à¸ö×Ö·û´®
     string quoteMe = s4 + "that" +
-                     // substr()ä»å…ƒç´ 20å¼€å§‹æ‹·è´10ä¸ªå­—ç¬¦ï¼š
+                     // substr()´ÓÔªËØ20¿ªÊ¼¿½±´10¸ö×Ö·û£º
                      s1.substr(20, 10) + s5 +
-                     // substr()ä»å…ƒç´ 5å¼€å§‹æ‹·è´æœ€å¤š100ä¸ªå­—ç¬¦ï¼Œ
-                     // æˆ–è€…ä¸€ç›´æ‹·è´åˆ°å­—ç¬¦ä¸²æœ«å°¾ï¼š
+                     // substr()´ÓÔªËØ5¿ªÊ¼¿½±´×î¶à100¸ö×Ö·û£¬
+                     // »òÕßÒ»Ö±¿½±´µ½×Ö·û´®Ä©Î²£º
                      "with" + s3.substr(5, 100) +
-                     // åƒä¸‹é¢è¿™æ ·æ‹·è´å•ä¸ªå­—ç¬¦æ˜¯å…è®¸çš„ï¼š
+                     // ÏñÏÂÃæÕâÑù¿½±´µ¥¸ö×Ö·ûÊÇÔÊĞíµÄ£º
                      s1.substr(37, 1);
-    cout << quoteMe << endl;  // è¾“å‡ºï¼šä¸€ä¸ªè›¤èœŠthat is sound doing with Elvis in a UFO?
-}
-
+    cout << quoteMe << endl;  // Êä³ö£ºWhat is that one clam doing with Elvis in a UFO?
+} ///:~

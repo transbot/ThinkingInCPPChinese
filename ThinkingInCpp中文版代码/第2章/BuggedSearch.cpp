@@ -1,4 +1,4 @@
-// C02:BuggedSearch.cpp {-xo}
+//: C02:BuggedSearch.cpp {-xo}
 //{L} ../TestSuite/Test
 #include <cstdlib>
 #include <ctime>
@@ -95,5 +95,4 @@ int main() {
     BinarySearchTest t;
     t.run();
     return t.report();
-}
-///:~
+} ///:~

@@ -3,13 +3,15 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // See source code use permissions stated in the file 'License.txt',
 // distributed with the code package available at www.MindView.net.
+
+// // 使用iwchar_traits进行宽字符比较
 #include <cassert>
 #include <iostream>
 #include "iwchar_traits.h"
 using namespace std;
 
 int main() {
-  // The same letters except for case:
+  // 相同的字母，不同的大小写
   iwstring wfirst = L"tHis";
   iwstring wsecond = L"ThIS";
   wcout << wfirst << endl;

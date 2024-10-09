@@ -35,4 +35,4 @@ int main() {
     // 使用unique_ptr来管理TraceHeap对象
     unique_ptr<TraceHeap> pMyObject = make_unique<TraceHeap>(5);
     cout << pMyObject->getVal() << endl; // 输出5
-}
+} ///:~

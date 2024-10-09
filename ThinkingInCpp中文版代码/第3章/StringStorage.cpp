@@ -1,10 +1,10 @@
 //: C03:StringStorage.cpp
-// (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// ï¿½ï¿½ï¿½Ô¡ï¿½C++ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½, ï¿½ï¿½2ï¿½æ¡·
-// ï¿½ï¿½ï¿½ß£ï¿½Bruce Eckel & Chuck Allisonï¿½ï¿½
-// ï¿½ï¿½ï¿½ß£ï¿½ï¿½Ü¾ï¿½(bookzhou.com)
-// ï¿½Ð¹ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½License.txtï¿½Ä¼ï¿½ï¿½ï¿½
-// ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½É´ï¿½www.MindView.netï¿½ï¿½ï¿½ï¿½ï¿½Ä°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³bookzhou.comï¿½ï¿½ï¿½Ø¡ï¿½
+// À´×Ô¡¶C++±à³ÌË¼Ïë, µÚ2¾í¡·
+// ×÷Õß£ºBruce Eckel & Chuck Allison¡£
+// ÒëÕß£ºÖÜ¾¸(bookzhou.com)
+// ÓÐ¹ØÔ´´úÂëµÄÊ¹ÓÃÐí¿É£¬Çë²ÎÔÄ´úÂë°ü¸½´øµÄLicense.txtÎÄ¼þ£¬
+// ¸Ã´úÂë°ü¿É´Ówww.MindView.net»òÖÐÎÄ°æÒëÕßÖ÷Ò³bookzhou.comÏÂÔØ¡£
+
 //{L} ../TestSuite/Test
 #include "StringStorage.h"
 

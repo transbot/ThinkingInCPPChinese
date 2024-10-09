@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
   string s("1234");
-  // at() saves you by throwing an exception:
+  // at()通过抛出异常来拯救你：
   try {
     s.at(5);
   } catch(exception& e) {

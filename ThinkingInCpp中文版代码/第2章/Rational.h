@@ -1,4 +1,4 @@
-// C02:Rational.h {-xo}
+//: C02:Rational.h {-xo}
 #ifndef RATIONAL_H
 #define RATIONAL_H
 #include <iosfwd>

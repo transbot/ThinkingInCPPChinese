@@ -3,13 +3,15 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // See source code use permissions stated in the file 'License.txt',
 // distributed with the code package available at www.MindView.net.
+
+// 使用istring进行不区分大小写的比较
 #include <cassert>
 #include <iostream>
 #include "ichar_traits.h"
 using namespace std;
 
 int main() {
-  // The same letters except for case:
+  // 相同的字母，不同的大小写
   istring first = "tHis";
   istring second = "ThIS";
   cout << first << endl;

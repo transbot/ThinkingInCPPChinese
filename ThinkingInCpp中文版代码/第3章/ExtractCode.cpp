@@ -3,7 +3,8 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // See source code use permissions stated in the file 'License.txt',
 // distributed with the code package available at www.MindView.net.
-// Extracts code from text.
+
+// 提取书中的代码
 #include <cassert>
 #include <cstddef>
 #include <cstdio>
@@ -13,135 +14,132 @@
 #include <string>
 using namespace std;
 
-// Legacy non-standard C header for mkdir()
+// 旧的非标准C头文件，为了使用mkdir()
 #if defined(__GNUC__) || defined(__MWERKS__)
 #include <sys/stat.h>
 #elif defined(__BORLANDC__) || defined(_MSC_VER) \
-  || defined(__DMC__)
+    || defined(__DMC__)
 #include <direct.h>
 #else
-#error Compiler not supported
+#error 不支持的编译器
 #endif
 
-// Check to see if directory exists
-// by attempting to open a new file
-// for output within it.
+// 检查目录是否存在，做法是
+// 尝试在其内打开新文件进行输出。
 bool exists(string fname) {
-  size_t len = fname.length();
-  if(fname[len-1] != '/' && fname[len-1] != '\\')
-    fname.append("/");
-  fname.append("000.tmp");
-  ofstream outf(fname.c_str());
-  bool existFlag = outf;
-  if(outf) {
-    outf.close();
-    remove(fname.c_str());
-  }
-  return existFlag;
+    size_t len = fname.length();
+    if (fname[len-1] != '/' && fname[len-1] != '\\')
+        fname.append("/");
+    fname.append("000.tmp");
+    ofstream outf(fname.c_str());
+    bool existFlag = outf.is_open();
+    if (outf) {
+        outf.close();
+        remove(fname.c_str());
+    }
+    return existFlag;
 }
 
 int main(int argc, char* argv[]) {
-  // See if input file name provided
-  if(argc == 1) {
-    cerr << "usage: extractCode file [dir]" << endl;
-    exit(EXIT_FAILURE);
-  }
-  // See if input file exists
-  ifstream inf(argv[1]);
-  if(!inf) {
-    cerr << "error opening file: " << argv[1] << endl;
-    exit(EXIT_FAILURE);
-  }
-  // Check for optional output directory
-  string root("./");  // current is default
-  if(argc == 3) {
-    // See if output directory exists
-    root = argv[2];
-    if(!exists(root)) {
-      cerr << "no such directory: " << root << endl;
-      exit(EXIT_FAILURE);
-    }
-    size_t rootLen = root.length();
-    if(root[rootLen-1] != '/' && root[rootLen-1] != '\\')
-      root.append("/");
-  }
-  // Read input file line by line
-  // checking for code delimiters
-  string line;
-  bool inCode = false;
-  bool printDelims = true;
-  ofstream outf;
-  while(getline(inf, line)) {
-    size_t findDelim = line.find("//" "/:~");
-    if(findDelim != string::npos) {
-      // Output last line and close file
-      if(!inCode) {
-        cerr << "Lines out of order" << endl;
+    // 检查是否指定了输入文件名
+    if (argc == 1) {
+        cerr << "用法: extractCode 文件 [目录]" << endl;
         exit(EXIT_FAILURE);
-      }
-      assert(outf);
-      if(printDelims)
-        outf << line << endl;
-      outf.close();
-      inCode = false;
-      printDelims = true;
-    } else {
-      findDelim = line.find("//" ":");
-      if(findDelim == 0) {
-        // Check for '!' directive
-        if(line[3] == '!') {
-          printDelims = false;
-          ++findDelim;  // To skip '!' for next search
-        }
-        // Extract subdirectory name, if any
-        size_t startOfSubdir =
-          line.find_first_not_of(" \t", findDelim+3);
-        findDelim = line.find(':', startOfSubdir);
-        if(findDelim == string::npos) {
-          cerr << "missing filename information\n" << endl;
-          exit(EXIT_FAILURE);
-        }
-        string subdir;
-        if(findDelim > startOfSubdir)
-          subdir = line.substr(startOfSubdir,
-                               findDelim - startOfSubdir);
-        // Extract file name (better be one!)
-        size_t startOfFile = findDelim + 1;
-        size_t endOfFile =
-          line.find_first_of(" \t", startOfFile);
-        if(endOfFile == startOfFile) {
-          cerr << "missing filename" << endl;
-          exit(EXIT_FAILURE);
-        }
-        // We have all the pieces; build fullPath name
-        string fullPath(root);
-        if(subdir.length() > 0)
-          fullPath.append(subdir).append("/");
-        assert(fullPath[fullPath.length()-1] == '/');
-        if(!exists(fullPath))
-#if defined(__GNUC__) || defined(__MWERKS__)
-          mkdir(fullPath.c_str(), 0);  // Create subdir
-#else
-          mkdir(fullPath.c_str());  // Create subdir
-#endif
-        fullPath.append(line.substr(startOfFile,
-                        endOfFile - startOfFile));
-        outf.open(fullPath.c_str());
-        if(!outf) {
-          cerr << "error opening " << fullPath
-               << " for output" << endl;
-          exit(EXIT_FAILURE);
-        }
-        inCode = true;
-        cout << "Processing " << fullPath << endl;
-        if(printDelims)
-          outf << line << endl;
-      }
-      else if(inCode) {
-        assert(outf);
-        outf << line << endl;  // Output middle code line
-      }
     }
-  }
-  exit(EXIT_SUCCESS);
-} ///:~
+
+    // 检查指定的输入文件是否存在
+    ifstream inf(argv[1]);
+    if (!inf) {
+        cerr << "打开文件失败: " << argv[1] << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    // 检查是否提供了可选的输出目录
+    string root("./"); // 默认为当前目录
+    if (argc == 3) {
+        // 检查指定的输出目录是否存在
+        root = argv[2];
+        if (!exists(root)) {
+            cerr << "不存在此目录: " << root << endl;
+            exit(EXIT_FAILURE);
+        }
+        size_t rootLen = root.length();
+        if (root[rootLen-1] != '/' && root[rootLen-1] != '\\')
+            root.append("/");
+    }
+
+    // 逐行读取输入文件，并且
+    // 检查代码定界符。
+    string line;
+    bool inCode = false;
+    bool printDelims = true;
+    ofstream outf;
+    while (getline(inf, line)) {
+        size_t findDelim = line.find("//" "/:~");
+        if (findDelim != string::npos) {
+            // 输出最后一行并关闭文件
+            if (!inCode) {
+                cerr << "行顺序错误" << endl;
+                exit(EXIT_FAILURE);
+            }
+            assert(outf);
+            if (printDelims)
+                outf << line << endl;
+            outf.close();
+            inCode = false;
+            printDelims = true;
+        } else {
+            findDelim = line.find("//" ":");
+            if (findDelim == 0) {
+                // 检查'!'指令
+                if (line[3] == '!') {
+                    printDelims = false;
+                    ++findDelim; // 为下一次搜索跳过'!'
+                }
+                // 提取子目录名称，如果有的话
+                size_t startOfSubdir = line.find_first_not_of(" \t", findDelim+3);
+                findDelim = line.find(':', startOfSubdir);
+                if (findDelim == string::npos) {
+                    cerr << "缺少文件名信息\n" << endl;
+                    exit(EXIT_FAILURE);
+                }
+                string subdir;
+                if (findDelim > startOfSubdir)
+                    subdir = line.substr(startOfSubdir, findDelim - startOfSubdir);
+                // 提取文件名（应该有一个！）
+                size_t startOfFile = findDelim + 1;
+                size_t endOfFile = line.find_first_of("\t", startOfFile);
+                if (endOfFile == startOfFile) {
+                    cerr << "缺少文件名" << endl;
+                    exit(EXIT_FAILURE);
+                }
+                // 现在已获得了所有信息，开始构建完整路径名称
+                string fullPath(root);
+                if (subdir.length() > 0)
+                    fullPath.append(subdir).append("/");
+                assert(fullPath[fullPath.length()-1] == '/');
+                if (!exists(fullPath))
+#if defined(__GNUC__) || defined(__MWERKS__)
+                    mkdir(fullPath.c_str(), 0); // 创建子目录
+#else
+                    mkdir(fullPath.c_str()); // 创建子目录
+#endif
+                fullPath.append(line.substr(startOfFile, endOfFile - startOfFile));
+                outf.open(fullPath.c_str());
+                if (!outf) {
+                    cerr << "打开 " << fullPath << " 进行输出时失败" << endl;
+                    exit(EXIT_FAILURE);
+                }
+                inCode = true;
+                cout << "正在处理 " << fullPath << endl;
+                if (printDelims)
+                    outf << line << endl;
+            } else if (inCode) {
+                assert(outf);
+                outf << line << endl; // 输出中间的代码行
+            }
+        }
+    }
+    exit(EXIT_SUCCESS);
+}
+///:~

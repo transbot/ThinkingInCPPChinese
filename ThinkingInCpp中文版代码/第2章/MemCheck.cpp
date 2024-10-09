@@ -104,5 +104,4 @@ void operator delete(void* p) {
 // 重载数组版本的delete。为了简化编程，把所有操作都转发给了标量版本
 void operator delete[](void* p) {
     operator delete(p);
-}
-///:~
+} ///:~

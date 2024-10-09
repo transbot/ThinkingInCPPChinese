@@ -1,4 +1,4 @@
-
+//: C01:SafeAssign_CPP20.cpp
 #include <vector>
 #include <iostream>
 #include <memory>
@@ -98,4 +98,4 @@ int main() {
     std::cout << h1 << std::endl; // ты╪Ш: 5 6 7
 
     return 0;
-}
+} ///:~

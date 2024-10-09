@@ -6,17 +6,15 @@
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
 #include <cassert>
 #include <string>
-#include <iostream>
-
 using namespace std;
 
 int main() {
-    string bigNews("二更鼓儿敲，");
+    string mirrorListening("二更鼓儿敲，");
     string replacement("敲得泪珠儿对对往下掉。");
 
     // 第一个实参相当于说：“对超出现有字符串末尾的字符进行替换”：
-    bigNews.replace(bigNews.size() ,
+    mirrorListening.replace(mirrorListening.size() ,
                     replacement.size(), replacement);    
-    assert(bigNews == "二更鼓儿敲，"
+    assert(mirrorListening == "二更鼓儿敲，"
                       "敲得泪珠儿对对往下掉。");
 } ///:~

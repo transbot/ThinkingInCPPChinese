@@ -1,23 +1,36 @@
 //: C03:AddStrings.cpp
-// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
-// (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// See source code use permissions stated in the file 'License.txt',
-// distributed with the code package available at www.MindView.net.
+// 来自《C++编程思想, 第2卷》
+// 作者：Bruce Eckel & Chuck Allison。
+// 译者：周靖(bookzhou.com)
+// 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
+// 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
 #include <string>
 #include <cassert>
+#include <iostream>
 using namespace std;
 
-int main() {
-  string s1("This ");
-  string s2("That ");
-  string s3("The other ");
-  // operator+ concatenates strings
-  s1 = s1 + s2;
-  assert(s1 == "This That ");
-  // Another way to concatenates strings
-  s1 += s3;
-  assert(s1 == "This That The other ");
-  // You can index the string on the right
-  s1 += s3 + s3[4] + "ooh lala";
-  assert(s1 == "This That The other The other oooh lala");
+int main() {  
+    string s1("谁不是");
+    string s2("错过了");
+    string s3("四下报更的鼓声.");
+    string s4("总有人偷偷拨弄镜月的指针");
+
+    // 找到句点符号的索引位置，rfind()的详情参见下一节
+    size_t peroidPos = s3.rfind('.');    
+
+    // 使用operator+拼接字符串
+    s1 = s1 + s2;
+    assert(s1 == "谁不是错过了");    
+
+    // 另一种拼接字符串的方法
+    s1 += s3;
+    assert(s1 == "谁不是错过了四下报更的鼓声.");   
+
+    // 在确保索引有效的前提下，对右侧的字符串进行索引
+    if (peroidPos < s3.size()) {    
+        s1 += s4 + s3[peroidPos]; // 在最后添加一个句点
+        assert(s1 == "谁不是错过了四下报更的鼓声.总有人偷偷拨弄镜月的指针.");        
+    } else {
+        cout << "索引无效" << endl;
+    }
 } ///:~
