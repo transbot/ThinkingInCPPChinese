@@ -4,7 +4,7 @@
 // See source code use permissions stated in the file 'License.txt',
 // distributed with the code package available at www.MindView.net.
 
-// 提取全书文稿中的代码，使用自C++18引入的filesystem库
+// 提取全书文稿中的代码，使用自C++17引入的filesystem库
 #include <cassert>
 #include <cstddef>
 #include <cstdio>
