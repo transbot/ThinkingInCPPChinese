@@ -1,11 +1,1 @@
-Write a program that takes two command-line arguments
-(a filename and a string) and counts the number of times
-the string occurs in the file, even as a substring
-(but ignoring overlaps). For example, an input string
-of ‚Äúba‚Äù would match twice in the word ‚Äúbasketball,‚Äù but
-an input string of ‚Äúana‚Äù would match only once in the
-word ‚Äúbanana.‚Äù Display to the console the number of
-times the string is matched in the file, as well as
-the average length of the words where the string occurred.
-(If the string occurs more than once in a word, only count
-the word once in figuring the average.)
+Write a program that takes two command-line arguments (a filename and a string) and counts the numberof times the string occurs in the file, even as a substring (but ignoringoverlaps). For example, an input string of °∞ba°± would match twice in the word °∞basketball,°± but an input string of °∞ana°± would match only once in the word °∞banana.°± Display to the console the number of times the string is matched in the file, as well as the average length of the words where the string occurred. (If the string occurs more than once in a word, only count the word once in figuring the average.)

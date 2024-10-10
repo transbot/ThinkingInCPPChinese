@@ -1,10 +1,10 @@
-//: C03:ExtractCode.cpp {-edg} {RunByHand}
+//: C03:ExtractCode_CPP20.cpp {-edg} {RunByHand}
 // From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // See source code use permissions stated in the file 'License.txt',
 // distributed with the code package available at www.MindView.net.
 
-// 提取全书文稿中的代码
+// 提取全书文稿中的代码，使用自C++18引入的filesystem库
 #include <cassert>
 #include <cstddef>
 #include <cstdio>
@@ -12,17 +12,9 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <filesystem>
 using namespace std;
-
-// 旧的非标准C头文件，为了使用mkdir()
-#if defined(__GNUC__) || defined(__MWERKS__)
-#include <sys/stat.h>
-#elif defined(__BORLANDC__) || defined(_MSC_VER) \
-    || defined(__DMC__)
-#include <direct.h>
-#else
-#error 不支持的编译器
-#endif
+namespace fs = std::filesystem;
 
 // 检查目录是否存在，做法是
 // 尝试在其内打开新文件进行输出。
@@ -118,12 +110,11 @@ int main(int argc, char* argv[]) {
                 if (subdir.length() > 0)
                     fullPath.append(subdir).append("/");
                 assert(fullPath[fullPath.length()-1] == '/');
-                if (!exists(fullPath))
-#if defined(__GNUC__) || defined(__MWERKS__)
-                    mkdir(fullPath.c_str(), 0); // 创建子目录
-#else
-                    mkdir(fullPath.c_str()); // 创建子目录
-#endif
+                
+                // 若目录不存在，就创建目录
+                if (!fs::exists(fullPath))
+                    fs::create_directories(fullPath); // 创建子目录
+
                 fullPath.append(line.substr(startOfFile, endOfFile - startOfFile));
                 outf.open(fullPath.c_str());
                 if (!outf) {

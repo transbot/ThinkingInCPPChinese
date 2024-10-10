@@ -1,15 +1,8 @@
 /*
-Write a program that takes two command-line arguments
-(a filename and a string) and counts the number of times
-the string occurs in the file, even as a substring
-(but ignoring overlaps). For example, an input string
-of â€œbaâ€ would match twice in the word â€œbasketball,â€ but
-an input string of â€œanaâ€ would match only once in the
-word â€œbanana.â€ Display to the console the number of
-times the string is matched in the file, as well as
-the average length of the words where the string occurred.
-(If the string occurs more than once in a word, only count
-the word once in figuring the average.)
+±àĞ´Ò»¸ö³ÌĞò£¬¸Ã³ÌĞò½ÓÊÕÁ½¸öÃüÁîĞĞÊµ²Î£¨Ò»¸öÎÄ¼şÃûºÍÒ»¸ö×Ö·û´®£©£¬²¢¼ÆËã×Ö·û´®ÔÚÎÄ¼şÖĞ³öÏÖµÄ´ÎÊı£¬
+ÎŞÂÛËüÊÇ²»ÊÇ×Ó´®£¨µ«ÊÇºöÂÔÖØµş£©¡£ÀıÈç£¬ÊäÈë×Ö·û´®¡°ba¡±ÔÚµ¥´Ê¡°basketball¡±¼ÆÎªÆ¥ÅäÁ½´Î£¬
+µ«ÊäÈë×Ö·û´®¡°ana¡±ÔÚµ¥´Ê¡°banana¡±ÖĞÖ»¼ÆÎªÆ¥ÅäÒ»´Î£¨ÒòÎª·¢ÉúÁËÖØµş£©¡£ÔÚ¿ØÖÆÌ¨ÖĞÏÔÊ¾×Ö·û´®ÔÚÎÄ¼şÖĞÆ¥ÅäµÄ´ÎÊı£¬
+ÒÔ¼°°üº¬¸Ã×Ö·û´®µÄµ¥´ÊµÄÆ½¾ù³¤¶È¡££¨Èç¹ûÒ»¸öµ¥´ÊÖĞ×Ö·û´®³öÏÖÁË¶à´Î£¬ÄÇÃ´ÔÚ¼ÆËãÆ½¾ù³¤¶ÈÊ±Ö»¼ÆËãÒ»´Î¡££©
 */
 
 #include <iostream>
@@ -22,7 +15,7 @@ int main() {
 	std::ifstream source("ex11.txt", std::ios::in);
 	std::string str;
 
-	std::cout << "Please enter a string for search: ";
+	std::cout << "ÇëÊäÈëÒª²éÕÒµÄ×Ö·û´®: ";
 	std::cin >> str;
 
 	std::string buf;
@@ -40,7 +33,7 @@ int main() {
 		}
 	}
 
-	std::cout << "String " << str << " appears " << s_count << " times in a given file.\n";
+	std::cout << "×Ö·û´® " << str << " ÔÚ¸ø¶¨µÄÎÄ¼şÖĞ³öÏÖÁË " << s_count << " ´Î¡£\n";
 
 	int lengths = 0;
 	for (const auto& s : words) {
@@ -48,7 +41,7 @@ int main() {
 	}
 
 	if (words.size() != 0)
-		std::cout << "Average words length: " << lengths / words.size() << '\n';
+		std::cout << "Æ½¾ùµ¥´Ê³¤¶È: " << lengths / words.size() << '\n';
 
 return 0;
 }
