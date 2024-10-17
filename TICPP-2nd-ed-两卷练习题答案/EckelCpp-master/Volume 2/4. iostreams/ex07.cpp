@@ -1,8 +1,7 @@
 /*
-String streams accommodate easy conversions, but they
-come with a price. Write a program that races atoi( )
-against the stringstream conversion system to see the
-effect of the overhead involved with stringstream.
+ 字符串流支持简单的转换，但这有一定的代价。编写一个程序，
+ 对比atoi()和stringstream转换系统，
+ 体会stringstream所产生的开销。
 */
 
 #include <iostream>

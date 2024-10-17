@@ -1,9 +1,11 @@
 //: C04:DataLogger.h
-// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
-// (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// See source code use permissions stated in the file 'License.txt',
-// distributed with the code package available at www.MindView.net.
-// Datalogger record layout.
+// 来自《C++编程思想, 第2卷》
+// 作者：Bruce Eckel & Chuck Allison。
+// 译者：周靖(bookzhou.com)
+// 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
+// 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
+
+// Datalogger程序的记录布局
 #ifndef DATALOG_H
 #define DATALOG_H
 #include <ctime>
@@ -12,24 +14,26 @@
 using std::ostream;
 
 struct Coord {
-  int deg, min, sec;
-  Coord(int d = 0, int m = 0, int s = 0)
-  : deg(d), min(m), sec(s) {}
-  std::string toString() const;
+    int deg, min, sec;
+    Coord(int d = 0, int m = 0, int s = 0) : deg(d), min(m), sec(s) {}
+    std::string toString() const;
 };
 
 ostream& operator<<(ostream&, const Coord&);
 
 class DataPoint {
-  std::time_t timestamp; // Time & day
-  Coord latitude, longitude;
-  double depth, temperature;
+    std::time_t timestamp;     // 时间和日期
+    Coord latitude, longitude; // 经纬度
+    double depth, temperature; // 深度和温度
+
+
 public:
-  DataPoint(std::time_t ts, const Coord& lat,
-            const Coord& lon, double dep, double temp)
-  : timestamp(ts), latitude(lat), longitude(lon),
-      depth(dep), temperature(temp) {}
-  DataPoint() : timestamp(0), depth(0), temperature(0) {}
-  friend ostream& operator<<(ostream&, const DataPoint&);
+    DataPoint(std::time_t ts, const Coord& lat,
+              const Coord& lon, double dep, double temp)
+        : timestamp(ts), latitude(lat), longitude(lon),
+            depth(dep), temperature(temp) {}
+
+    DataPoint() : timestamp(0), depth(0), temperature(0) {}
+    friend ostream& operator<<(ostream&, const DataPoint&);
 };
 #endif // DATALOG_H ///:~

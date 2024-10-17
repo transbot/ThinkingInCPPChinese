@@ -2,6 +2,10 @@
     "files.associations": {
         "ostream": "cpp",
         "filesystem": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "xiosbase": "cpp",
+        "iosfwd": "cpp",
+        "cassert": "cpp",
+        "iomanip": "cpp"
     }
 }

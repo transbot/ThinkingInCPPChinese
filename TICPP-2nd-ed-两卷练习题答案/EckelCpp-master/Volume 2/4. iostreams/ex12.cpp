@@ -11,7 +11,7 @@ when printing a transcendental number such as sqrt(2.0).
 
 int main() {
 
-	for (int i = 0; i < 45; i++) {
+	for (int i = 0; i < 65; i++) {
 		std::cout.precision(i);
 		std::cout << i << ": " << sqrt(2.0) << '\n';
 	}

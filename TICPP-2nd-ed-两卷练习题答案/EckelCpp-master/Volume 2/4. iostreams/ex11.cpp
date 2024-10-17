@@ -1,9 +1,5 @@
 /*
-Write size_t(-1) (the largest unsigned int on your platform)
-to a text file 1,000,000 times. Repeat, but write to a binary file.
-Compare the size of the two files, and see how much room is saved
-using the binary format. (You may first want to calculate how much
-will be saved on your platform.)
+将size_t(-1)（当前平台最大的无符号整数）写入一个文本文件1 000 000 次。重复这一过程，但这次把它写入一个二进制文件。比较这两个文件的大小，看看使用二进制格式能节省多少空间。（最好先估算一下自己的平台上能节省多少空间，再和程序的运行结果对比。）
 */
 
 #include <iostream>

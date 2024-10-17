@@ -1,9 +1,11 @@
 //: C04:Datagen.cpp
-// From "Thinking in C++, Volume 2", by Bruce Eckel & Chuck Allison.
-// (c) 1995-2004 MindView, Inc. All Rights Reserved.
-// See source code use permissions stated in the file 'License.txt',
-// distributed with the code package available at www.MindView.net.
-// Test data generator.
+// 来自《C++编程思想, 第2卷》
+// 作者：Bruce Eckel & Chuck Allison。
+// 译者：周靖(bookzhou.com)
+// 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
+// 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
+
+// 测试数据生成程序
 //{L} DataLogger
 #include <cstdlib>
 #include <ctime>
@@ -15,17 +17,17 @@ using namespace std;
 
 int main() {
   time_t timer;
-  srand(time(&timer)); // Seed the random number generator
+  srand(time(&timer)); // 初始化随机数生成器种子
   ofstream data("data.txt");
   assure(data, "data.txt");
   ofstream bindata("data.bin", ios::binary);
   assure(bindata, "data.bin");
   for(int i = 0; i < 100; i++, timer += 55) {
-    // Zero to 199 meters:
+    // 0到199米：
     double newdepth  = rand() % 200;
     double fraction = rand() % 100 + 1;
     newdepth += 1.0 / fraction;
-    double newtemp = 150 + rand() % 200; // Kelvin
+    double newtemp = 150 + rand() % 200; // 开尔文温度
     fraction = rand() % 100 + 1;
     newtemp += 1.0 / fraction;
     const DataPoint d(timer, Coord(45,20,31),
