@@ -6,5 +6,6 @@
 ![image](https://github.com/user-attachments/assets/7290f53d-51fa-4c39-9cb8-33008c381173) 
 - 提供符合现代C++标准（C++11 ~ C++20）的修订版代码供参考（文件名以CPP20结尾），例如第1章许多涉及“异常规范”（C++11后已弃用）的代码。
 - 提供了在现代C++编译器下的编译命令。以Microsoft VC++编译器为主，少量提供g++版本。
+- 对部分“练习”答案进行了完善或全部重写（所有答案都在“TICPP-2nd-ed-两卷练习题答案”文件夹中）
 
 ![image](https://github.com/user-attachments/assets/15188f93-92e6-46ec-b319-678759363978)
