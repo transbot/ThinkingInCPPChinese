@@ -23,11 +23,10 @@ double min(double x, double y) {
 
 int main() {
   const char *s2 = "say \"Ni-!\"", *s1 = "knights who";
-  cout << min(1, 2) << endl;      // 1: 1 (template)
+  cout << min(1, 2) << endl;      // 1: 1 (自动调用模板版本的min)
   cout << min(1.0, 2.0) << endl;  // 2: 1 (double)
   cout << min(1, 2.0) << endl;    // 3: 1 (double)
-  cout << min(s1, s2) << endl;    // 4: knights who (const
-                                  //                 char*)
+  cout << min(s1, s2) << endl;    // 4: knights who (const char*)
   cout << min<>(s1, s2) << endl;  // 5: say "Ni-!"
-                                  //    (template)
+                                  //    (显式调用模板版本的min)
 } ///:~

@@ -6,29 +6,27 @@
 #include <iostream>
 using namespace std;
 
-// A template and a specialization
+// 一个模板和一个特化
 template<bool> struct StaticCheck {
-  StaticCheck(...);
+    StaticCheck(...);
 };
-
 template<> struct StaticCheck<false> {};
 
-// The macro (generates a local class)
-#define STATIC_CHECK(expr, msg) {             \
-  class Error_##msg {};                       \
-  sizeof((StaticCheck<expr>(Error_##msg()))); \
+// 宏（用于生成一个局部类）
+#define STATIC_CHECK(expr, msg) { \
+    class Error_##msg {}; \
+    sizeof((StaticCheck<expr>(Error_##msg()))); \
 }
 
-// Detects narrowing conversions
+// 检测缩小转换
 template<class To, class From> To safe_cast(From from) {
-  STATIC_CHECK(sizeof(From) <= sizeof(To),
-               NarrowingConversion);
-  return reinterpret_cast<To>(from);
+    STATIC_CHECK(sizeof(From) <= sizeof(To), NarrowingConversion);
+    return reinterpret_cast<To>(from);
 }
 
 int main() {
-  void* p = 0;
-  int i = safe_cast<int>(p);
-  cout << "int cast okay" << endl;
-  //! char c = safe_cast<char>(p);
+    void* p = 0;
+    int i = safe_cast<int>(p);
+    cout << "可以安全转换为int\n";
+    //! char c = safe_cast<char>(p);
 } ///:~

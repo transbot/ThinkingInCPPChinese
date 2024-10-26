@@ -6,22 +6,22 @@
 #include <cstddef>
 using std::size_t;
 
-template<size_t R, size_t C, typename T>
-void init1(T a[R][C]) {
-  for(size_t i = 0; i < R; ++i)
-    for(size_t j = 0; j < C; ++j)
-      a[i][j] = T();
+template<size_t R, size_t C, typename T> 
+void init1(T a[R][C]) { 
+    for(size_t i = 0; i < R; ++i) 
+        for(size_t j = 0; j < C; ++j) 
+            a[i][j] = T(); 
 }
 
-template<size_t R, size_t C, class T>
-void init2(T (&a)[R][C]) {  // Reference parameter
-  for(size_t i = 0; i < R; ++i)
-    for(size_t j = 0; j < C; ++j)
-      a[i][j] = T();
+template<size_t R, size_t C, class T> 
+void init2(T (&a)[R][C]) { // 引用参数 
+    for(size_t i = 0; i < R; ++i) 
+        for(size_t j = 0; j < C; ++j) 
+            a[i][j] = T(); 
 }
 
-int main() {
-  int a[10][20];
-  init1<10,20>(a);  // Must specify
-  init2(a);         // Sizes deduced
+int main() { 
+    int a[10][20]; 
+    init1<10,20>(a); // 必须指定大小 
+    init2(a);        // 自动推断大小
 } ///:~

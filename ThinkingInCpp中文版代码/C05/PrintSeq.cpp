@@ -3,7 +3,8 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
-// A print function for Standard C++ sequences.
+
+// printSeq函数可以打印任意标准C++序列
 #include <iostream>
 #include <list>
 #include <memory>
@@ -19,12 +20,13 @@ void printSeq(Seq<T>& seq) {
 }
 
 int main() {
-  // Process a vector
+  // 处理vector
   vector<int> v;
   v.push_back(1);
   v.push_back(2);
   printSeq(v);
-  // Process a list
+  
+  // 处理list
   list<int> lst;
   lst.push_back(3);
   lst.push_back(4);

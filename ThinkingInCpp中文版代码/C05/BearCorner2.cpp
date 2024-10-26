@@ -3,45 +3,43 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
-// Illustrates policy classes.
+// 演示策略类
 #include <iostream>
 #include "BearCorner.h"
 using namespace std;
 
-// Policy classes (require a static doAction() function):
+// 策略类（要求一个静态doAction()函数）：
 class Feed {
 public:
-  static const char* doAction() { return "Feeding"; }
+    static const char* doAction() { return "喂"; }
 };
 
 class Stuff {
 public:
-  static const char* doAction() { return "Stuffing"; }
+    static const char* doAction() { return "填充"; }
 };
 
-// The Guest template (uses a policy and a traits class)
-template<class Guest, class Action,
-         class traits = GuestTraits<Guest> >
+// Guest模板（使用了一个策略和一个traits类）
+template<class Guest, class Action, class traits = GuestTraits<Guest> >
 class BearCorner {
-  Guest theGuest;
-  typedef typename traits::beverage_type beverage_type;
-  typedef typename traits::snack_type snack_type;
-  beverage_type bev;
-  snack_type snack;
+    Guest theGuest;
+    typedef typename traits::beverage_type beverage_type;
+    typedef typename traits::snack_type snack_type;
+    beverage_type bev; // 喝的
+    snack_type snack;  // 吃的 
 public:
-  BearCorner(const Guest& g) : theGuest(g) {}
-  void entertain() {
-    cout << Action::doAction() << " " << theGuest
-         << " with " << bev
-         << " and " << snack << endl;
-  }
+    BearCorner(const Guest& g) : theGuest(g) {}
+    void entertain() {
+        cout << "用" << bev << "和" << snack
+             << Action::doAction() << theGuest << endl;
+    }
 };
 
 int main() {
-  Boy cr;
-  BearCorner<Boy, Feed> pc1(cr);
-  pc1.entertain();
-  Bear pb;
-  BearCorner<Bear, Stuff> pc2(pb);
-  pc2.entertain();
+    Boy cr;
+    BearCorner<Boy, Feed> pc1(cr);
+    pc1.entertain();
+    Bear pb;
+    BearCorner<Bear, Stuff> pc2(pb);
+    pc2.entertain();
 } ///:~

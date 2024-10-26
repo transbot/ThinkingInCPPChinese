@@ -9,6 +9,7 @@
   do { typedef int a[(x) ? 1 : -1]; } while(0)
 
 int main() {
-  STATIC_ASSERT(sizeof(int) <= sizeof(long)); // Passes
-  STATIC_ASSERT(sizeof(double) <= sizeof(int)); // Fails
+    STATIC_ASSERT(sizeof(int) <= sizeof(long));   // 通过
+    STATIC_ASSERT(sizeof(double) <= sizeof(int)); // 失败（编译时报错：负下标）
 } ///:~
+

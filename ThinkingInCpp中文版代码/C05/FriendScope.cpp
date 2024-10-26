@@ -7,22 +7,20 @@
 using namespace std;
 
 class Friendly {
-  int i;
+    int i;
 public:
-  Friendly(int theInt) { i = theInt; }
-  friend void f(const Friendly&); // Needs global def.
-  void g() { f(*this); }
+    Friendly(int theInt) { i = theInt; }
+    friend void f(const Friendly&); // 需要全局定义
+    void g() { f(*this); }
 };
 
-void h() {
-  f(Friendly(1));  // Uses ADL
-}
+void h() { f(Friendly(1)); } // ADL机制介入
 
-void f(const Friendly& fo) {  // Definition of friend
-  cout << fo.i << endl;
+void f(const Friendly& fo) { // 友元定义
+    cout << fo.i << endl;
 }
 
 int main() {
-  h(); // Prints 1
-  Friendly(2).g(); // Prints 2
+    h(); // 输出1
+    Friendly(2).g(); // 输出2
 } ///:~

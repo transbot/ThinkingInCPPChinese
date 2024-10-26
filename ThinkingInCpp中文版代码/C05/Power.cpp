@@ -10,6 +10,7 @@ template<int N, int P> struct Power {
   enum { val = N * Power<N, P-1>::val };
 };
 
+// 一个部分特化的模板
 template<int N> struct Power<N, 0> {
   enum { val = 1 };
 };
