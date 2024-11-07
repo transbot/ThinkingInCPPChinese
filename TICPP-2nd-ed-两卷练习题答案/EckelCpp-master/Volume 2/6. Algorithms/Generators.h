@@ -9,7 +9,6 @@
 #include <cstring>
 #include <set>
 #include <cstdlib>
-#include <iostream>
 
 // A generator that can skip over numbers:
 class SkipGen {
@@ -27,16 +26,16 @@ public:
 
 // Generate unique random numbers from 0 to mod:
 class URandGen {
-  std::set<float> used;
+  std::set<int> used;
   int limit;
 public:
   URandGen(int lim) : limit(lim) {}
-  float operator()() {
+  int operator()() {
     while(true) {
-      float f = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / limit));
-      if(used.find(f) == used.end()) {
-        used.insert(f);
-        return f;
+      int i = int(std::rand()) % limit;
+      if(used.find(i) == used.end()) {
+        used.insert(i);
+        return i;
       }
     }
   }

@@ -2,7 +2,7 @@
 Race sort( ), partial_sort( ), and nth_element( )
 against each other and find out if it’s really worth
 the time saved to use one of the weaker sorts if
-they’re all that’s needed.
+they are all that's needed.
 */
 
 #include <iostream>

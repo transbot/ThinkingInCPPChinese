@@ -1,9 +1,6 @@
 /*
-Modify CalcInventory.cpp so that it will find all
-the objects that have a quantity that鈥檚 less than
-a certain amount. Provide this amount as a command-line
-argument, and use copy_if( ) and bind2nd( ) to create
-the collection of values less than the target value.
+修改CalcInventory.cpp以找出少于某个特定数量的所有对象。将该数量作为命令行实参提供，
+并使用copy_if()和bind2nd()创建小于目标值的值集合。
 */
 
 //: C06:CalcInventory.cpp
