@@ -3,7 +3,8 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
-// Using a vector as a stack; modified Stack1.cpp.
+
+// 将vector作为stack使用；本例修改自Stack1.cpp
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -11,13 +12,13 @@
 using namespace std;
 
 int main() {
-  ifstream in("Stack3.cpp");
-  vector<string> textlines;
-  string line;
-  while(getline(in, line))
-    textlines.push_back(line + "\n");
-  while(!textlines.empty()) {
-    cout << textlines.back();
-    textlines.pop_back();
-  }
+    ifstream in("Stack3.cpp");
+    vector<string> textlines;
+    string line;
+    while(getline(in, line))
+        textlines.push_back(line + "\n");
+    while(!textlines.empty()) {
+        cout << textlines.back();
+        textlines.pop_back();
+    }
 } ///:~

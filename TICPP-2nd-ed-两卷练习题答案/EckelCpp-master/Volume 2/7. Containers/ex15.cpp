@@ -1,5 +1,5 @@
 /*
-Create a kind of “hangman” game. Create a class
+Create a kind of “hangman�? game. Create a class
 that contains a char and a bool to indicate whether
 that char has been guessed yet. Randomly select a
 word from a file, and read it into a vector of your
@@ -49,7 +49,7 @@ int main() {
 	while (source >> buf)
 		dictionary.push_back(buf);
 
-	std::string keyword = dictionary.at( std::rand() % dictionary.size() );
+	std::string keyword = dictionary.at( std::rand() % dictionary.size() ); 
 	int attempts = keyword.size() * 2;
 
 	CharactersPool pool;

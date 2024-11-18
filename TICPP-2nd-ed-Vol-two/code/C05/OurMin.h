@@ -5,6 +5,6 @@
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
 #ifndef OURMIN_H
 #define OURMIN_H
-// The declaration of min()
+// min()的声明
 template<typename T> const T& min(const T&, const T&);
 #endif // OURMIN_H ///:~

@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
         if (findDelim != string::npos) {
             // 输出最后一行并关闭文件
             if (!inCode) {
-                cerr << "行顺序错误" << endl;
+                cerr << "代码行匹配错误" << endl;
                 exit(EXIT_FAILURE);
             }
             assert(outf);

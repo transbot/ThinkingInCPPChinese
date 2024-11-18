@@ -3,21 +3,22 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
+
 #include "FileEditor.h"
 #include <fstream>
 #include "../require.h"
 using namespace std;
 
 void FileEditor::open(const char* filename) {
-  ifstream in(filename);
-  assure(in, filename);
-  string line;
-  while(getline(in, line))
-    push_back(line);
+    ifstream in(filename);
+    assure(in, filename);
+    string line;
+    while(getline(in, line))
+        push_back(line);
 }
 
-// Could also use copy() here:
+// 这里也可以使用copy()
 void FileEditor::write(ostream& out) {
-  for(iterator w = begin(); w != end(); w++)
-    out << *w << endl;
+    for(iterator w = begin(); w != end(); w++)
+        out << *w << endl;
 } ///:~

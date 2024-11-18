@@ -17,7 +17,7 @@ template<class Seq> void purge(Seq& c) {
   }
 }
 
-// 迭代器版本：
+// 迭代器版本
 template<class InpIt> void purge(InpIt begin, InpIt end) {
   while(begin != end) {
     delete *begin;

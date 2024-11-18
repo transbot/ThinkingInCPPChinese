@@ -31,7 +31,7 @@ int main() {
     string us(v.begin(), v.end());  // 创建新的字符串us，其内容与v相同
     sort(us.begin(), us.end());     // 对us进行排序
 
-    // 使用unique来删除us中的重复元素，并获取新序列的“末端后”迭代器uend
+    // 使用unique来删除us中的重复元素，并获取新序列的“终点后”迭代器uend
     string::iterator it = us.begin(), cit = v.end(),
                           uend = unique(us.begin(), us.end()); 
 

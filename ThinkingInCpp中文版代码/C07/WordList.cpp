@@ -3,7 +3,8 @@
 // (c) 1995-2004 MindView, Inc. All Rights Reserved.
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
-// Display a list of words used in a document.
+
+// 显示文档中单词的一个列表
 #include <algorithm>
 #include <cctype>
 #include <cstring>
@@ -17,26 +18,24 @@
 using namespace std;
 
 char replaceJunk(char c) {
-  // Only keep alphas, space (as a delimiter), and '
-  return (isalpha(c) || c == '\'') ? c : ' ';
+    // 只保留字母、空格（作为分隔符）和'字符
+    return (isalpha(c) || c == '\'') ? c : ' ';
 }
 
 int main(int argc, char* argv[]) {
-  char* fname = "WordList.cpp";
-  if(argc > 1) fname = argv[1];
-  ifstream in(fname);
-  assure(in, fname);
-  set<string> wordlist;
-  string line;
-  while(getline(in, line)) {
-    transform(line.begin(), line.end(), line.begin(),
-              replaceJunk);
-    istringstream is(line);
-    string word;
-    while(is >> word)
-      wordlist.insert(word);
-  }
-  // Output results:
-  copy(wordlist.begin(), wordlist.end(),
-       ostream_iterator<string>(cout, "\n"));
+    char* fname = "WordList.cpp";
+    if(argc > 1) fname = argv[1];
+    ifstream in(fname);
+    assure(in, fname);
+    set<string> wordlist;
+    string line;
+    while(getline(in, line)) {
+        transform(line.begin(), line.end(), line.begin(), replaceJunk);
+        istringstream is(line);
+        string word;
+        while(is >> word)
+            wordlist.insert(word);
+    }
+    // 输出结果：
+    copy(wordlist.begin(), wordlist.end(), ostream_iterator<string>(cout, "\n"));
 } ///:~

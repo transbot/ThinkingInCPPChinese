@@ -10,12 +10,13 @@
 using namespace std;
 
 int main() {
-  priority_queue<int> pqi;
-  srand(time(0)); // Seed the random number generator
-  for(int i = 0; i < 100; i++)
-    pqi.push(rand() % 25);
-  while(!pqi.empty()) {
-    cout << pqi.top() << ' ';
-    pqi.pop();
-  }
+    priority_queue<int> pqi;
+    srand(time(0)); // 初始化随机数生成器
+    for(int i = 0; i < 100; i++)
+        pqi.push(rand() % 25);
+
+    while(!pqi.empty()) {
+        cout << pqi.top() << ' ';
+        pqi.pop();
+    }
 } ///:~

@@ -13,60 +13,66 @@ using namespace std;
 
 template<class T, class Compare>
 class PQV : public vector<T> {
-  Compare comp;
-  bool sorted;
-  void assureHeap() {
-    if(sorted) {
-      // Turn it back into a heap:
-      make_heap(this->begin(),this->end(), comp);
-      sorted = false;
+    Compare comp;
+    bool sorted;
+
+    void assureHeap() {
+        if(sorted) {
+            // 将其恢复为堆：
+            make_heap(this->begin(), this->end(), comp);
+            sorted = false;
+        }
     }
-  }
+
 public:
-  PQV(Compare cmp = Compare()) : comp(cmp) {
-    make_heap(this->begin(),this->end(), comp);
-    sorted = false;
-  }
-  const T& top() {
-    assureHeap();
-    return this->front();
-  }
-  void push(const T& x) {
-    assureHeap();
-    this->push_back(x); // Put it at the end
-    // Re-adjust the heap:
-    push_heap(this->begin(),this->end(), comp);
-  }
-  void pop() {
-    assureHeap();
-    // Move the top element to the last position:
-    pop_heap(this->begin(),this->end(), comp);
-    this->pop_back();// Remove that element
-  }
-  void sort() {
-    if(!sorted) {
-      sort_heap(this->begin(),this->end(), comp);
-      reverse(this->begin(),this->end());
-      sorted = true;
+    PQV(Compare cmp = Compare()) : comp(cmp) {
+        make_heap(this->begin(), this->end(), comp);
+        sorted = false;
     }
-  }
+
+    const T& top() {
+        assureHeap();
+        return this->front();
+    }
+
+    void push(const T& x) {
+        assureHeap();
+        this->push_back(x); // 将其置于末尾
+        // 重新调整堆：
+        push_heap(this->begin(), this->end(), comp);
+    }
+
+    void pop() {
+        assureHeap();
+        // 将top元素移到最后一个位置：
+        pop_heap(this->begin(), this->end(), comp);
+        this->pop_back(); // 移除该元素
+    }
+
+    void sort() {
+        if(!sorted) {
+            sort_heap(this->begin(), this->end(), comp);
+            reverse(this->begin(), this->end());
+            sorted = true;
+        }
+    }
 };
 
 int main() {
-  PQV< int, less<int> > pqi;
-  srand(time(0));
-  for(int i = 0; i < 100; i++) {
-    pqi.push(rand() % 25);
+    PQV<int, less<int>> pqi;
+    srand(time(0));
+    for(int i = 0; i < 100; i++) {
+        pqi.push(rand() % 25);
+        copy(pqi.begin(), pqi.end(), ostream_iterator<int>(cout, " "));
+        cout << "\n-----" << endl;
+    }
+    pqi.sort();
     copy(pqi.begin(), pqi.end(),
-      ostream_iterator<int>(cout, " "));
+         ostream_iterator<int>(cout, " "));
     cout << "\n-----" << endl;
-  }
-  pqi.sort();
-  copy(pqi.begin(), pqi.end(),
-    ostream_iterator<int>(cout, " "));
-  cout << "\n-----" << endl;
-  while(!pqi.empty()) {
-    cout << pqi.top() << ' ';
-    pqi.pop();
-  }
+
+    while(!pqi.empty()) {
+        cout << pqi.top() << ' ';
+        pqi.pop();
+    }
 } ///:~

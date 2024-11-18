@@ -17,7 +17,8 @@ class Inventory {
 public:
     Inventory(char it, int quant, int val)
     : item(it), quantity(quant), value(val) {}
-    // 可以接受复合赋值操作符和拷贝构造函数
+    // 编译器自动生成的拷贝构造函数和赋值操作符就足够了，
+    // 不需要手动定义这些函数。
     char getItem() const { return item; }
     int getQuantity() const { return quantity; }
     void setQuantity(int q) { quantity = q; }
