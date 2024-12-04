@@ -1,5 +1,5 @@
 //: C01:Nonlocal2.cpp
-// 演示异常处理。
+// 演示异常处理
 #include <iostream>
 using namespace std;
 

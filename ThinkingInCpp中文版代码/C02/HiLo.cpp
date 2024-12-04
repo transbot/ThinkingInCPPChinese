@@ -1,5 +1,5 @@
 //: C02:HiLo.cpp {RunByHand}
-// 过个“猜大小”游戏利用了循环不变量
+// 这个“猜大小”游戏利用了循环不变量
 #include <cstdlib>
 #include <iostream>
 #include <string>

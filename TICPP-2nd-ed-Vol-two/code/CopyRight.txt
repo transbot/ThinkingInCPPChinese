@@ -1,75 +1,12 @@
-(c) 1995-2004 MindView, Inc.  All rights reserved.
-Source code file from the book
-"Thinking in C++, 2nd Edition, Volume 2."
-
-The following permissions are granted respecting the
-computer source code, which is contained in this file:
-
-Permission is granted to classroom educators to use this
-file as part of instructional materials prepared for
-classes personally taught or supervised by the educator who
-uses this permission, provided that (a) the book "Thinking
-in C++" is cited as the origin on each page or slide that
-contains any part of this file, and (b) that you may not
-remove the above copyright legend nor this notice. This
-permission extends to handouts, slides and other
-presentation materials.
-
-For purposes that do not include the publication or
-presentation of educational or instructional materials,
-permission also is granted to computer program designers
-and programmers, and to their employers and customers, (a)
-to use and modify this file for the purpose of creating
-executable computer software, and (b) to distribute
-resulting computer programs in binary form only, provided
-that (c) you may not remove the above copyright legend nor
-this notice from retained source code copies of this file,
-and (d) each copy distributed in binary form has embedded
-within it the above copyright notice.
-
-Apart from the permissions granted above, the sole
-authorized distribution point for additional copies of this
-file is http://www.MindView.net (and official mirror sites)
-where it is available, subject to the permissions and
-restrictions set forth herein.
-
-The following are clarifications of the limited permissions
-granted above:
-
-1. You may not publish or distribute originals or
-modified versions of the source code to the software other
-than in classroom situations described above.
-
-2. You may not use the software file or portions
-thereof in printed media without the express permission of
-the copyright owner.
-
-The copyright owner and author or authors make no
-representation about the suitability of this software for
-any purpose.  It is provided "as is," and all express,
-implied, and statutory warranties and conditions of any
-kind including any warranties and conditions of
-merchantability, satisfactory quality, security, fitness
-for a particular purpose and non-infringement, are
-disclaimed. The entire risk as to the quality and
-performance of the software is with you.
-
-In no event will the authors or the publisher be liable for
-any lost revenue, savings, or data, or for direct,
-indirect, special, consequential, incidental, exemplary or
-punitive damages, however caused and regardless of any
-related theory of liability, arising out of this license
-and/or the use of or inability to use this software, even
-if the vendors and/or the publisher have been advised of
-the possibility of such damages. Should the software prove
-defective, you assume the cost of all necessary servicing,
-repair, or correction.
-
-If you think you have a correction for an error in the
-software, please submit the correction to www.MindView.net.
-(Please use the same process for non-code errors found in
-the book.)
-
-If you have a need for permissions not granted above,
-please inquire of MindView, Inc., at www.MindView.net or
-send a request by email to Bruce@EckelObjects.com.
+(c) 1995-2004 MindView, Inc. 保留所有权利。此文件来自《C++编程思想》，第2版，第2卷。
+我们为此文件中包含的计算机源代码授予以下权限：
+1. 授予课堂教育者使用本文件作为其亲自教授或监督的课程的教学材料的一部分的权限，前提是：(a)在每个包含本文件任何部分的页面或幻灯片上引用《C++编程思想》一书作为来源；(b)不得删除上述版权声明或此通知。此权限扩展到讲义、幻灯片和其他演示材料。
+2. 对于不包括出版或展示教育或教学材料的目的，还授予计算机程序设计师和程序员及其雇主和客户：(a)为创建可执行计算机软件而使用和修改本文件的权限；(b)仅以二进制形式分发由此产生的计算机程序的权限；(c)不得从保留的源代码副本中删除上述版权声明或此通知；(d)每个以二进制形式分发的副本都嵌入了上述版权声明。
+除了上述授予的权限外，额外副本的唯一授权分发点是 http://www.MindView.net（以及官方镜像站点），在那里可以根据本文所述的权限和限制获得额外的副本。
+以下是上述有限权限的澄清：
+1. 除上述课堂教学情况外，不得发布或分发源代码的原始版本或修改版本。
+2. 未经版权所有者的明确许可，不得将软件文件或其部分用于印刷媒体。
+版权所有者和作者不对本软件适用于任何目的做出任何声明。本软件“按原样”提供，对所有明示、暗示和法定的保证和条件，包括但不限于适销性、满意质量、安全性、特定用途适用性和非侵权的任何保证和条件，均予以否认。软件的质量和性能风险完全由您承担。
+无论因何原因，无论根据何种担责理论，作者或出版商均不对因本许可证和/或使用或无法使用本软件而导致的任何收入损失、节省损失或数据丢失，或任何直接、间接、特殊、附带、示范性或惩罚性损害负责，即使供应商和/或出版商已被告知存在此类损害的可能性。如果软件被证明有缺陷，您需承担所有必要的服务、修理或纠正的成本。
+如果您认为发现了软件中的错误，请将其提交给www.MindView.net。（请使用相同的流程来报告书中发现的非代码错误。）中文版用户注意，所有程序bug和正文描述错误请提交到译者主页：https://bookzhou.com。
+如果需要上述未授予的权限，请联系MindView公司，网址为www.MindView.net 或发送电子邮件至Bruce@EckelObjects.com。

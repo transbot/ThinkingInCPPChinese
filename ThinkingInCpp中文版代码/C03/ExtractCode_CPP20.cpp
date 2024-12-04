@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
                     subdir = line.substr(startOfSubdir, findDelim - startOfSubdir);
                 // 提取文件名（应该有一个！）
                 size_t startOfFile = findDelim + 1;
-                size_t endOfFile = line.find_first_of("\t", startOfFile);
+                size_t endOfFile = line.find_first_of("\t {", startOfFile);
                 if (endOfFile == startOfFile) {
                     cerr << "缺少文件名" << endl;
                     exit(EXIT_FAILURE);

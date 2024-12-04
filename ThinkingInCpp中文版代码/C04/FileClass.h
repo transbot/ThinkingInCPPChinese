@@ -5,7 +5,7 @@
 // 有关源代码的使用许可，请参阅代码包附带的License.txt文件，
 // 该代码包可从www.MindView.net或中文版译者主页bookzhou.com下载。
 
-// 封装了stdio FILE指针
+// 封装stdio FILE指针
 #ifndef FILECLASS_H
 #define FILECLASS_H
 #include <cstdio>

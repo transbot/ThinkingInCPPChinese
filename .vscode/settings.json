@@ -80,6 +80,12 @@
         "xloctime": "cpp",
         "xmemory": "cpp",
         "xtr1common": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "mutex": "cpp",
+        "thread": "cpp",
+        "condition_variable": "cpp",
+        "future": "cpp",
+        "regex": "cpp",
+        "stop_token": "cpp"
     }
 }

@@ -1,5 +1,5 @@
 //: C01:Nonlocal.cpp
-// setjmp() & longjmp().
+// ÑÝÊ¾setjmp() & longjmp()
 #include <iostream>
 #include <csetjmp>
 using namespace std;
