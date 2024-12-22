@@ -36,7 +36,7 @@ C++是一门复杂且强大的编程语言，它的语法和特性丰富多样�
 
 **配套资源和勘误**
 
-本书的源代码、练习答案以及其他相关资源，请访问译者主页 （<https://bookzhou.com）> 、GitHub项目（<https://github.com/transbot/ThinkingInCPPChinese）或者扫码从清华大学出版社的网盘下载。>
+本书的源代码、练习答案以及其他相关资源，请访问译者主页 （<https://bookzhou.com）> 、GitHub项目（<https://github.com/transbot/ThinkingInCPPChinese>）或者扫码从清华大学出版社的网盘下载。
 
 如果您在阅读过程中发现了任何错误或问题，请通过译者主页提交反馈。您的帮助对我们非常重要，感谢您的支持！
 
